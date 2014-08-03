@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<script>
+			function howLongAMother() {
+				var mom = prompt("Are you a mother?","Enter true or false").toLowerCase();
+				var mothersDay = 12;
+				var mothersMonth = 5;
+				switch (mom) {
+					case 'true':
+						var mothersDayToday = prompt("Is today Mother's Day?","Enter true or false").toLowerCase();
+						switch (mothersDayToday) {
+							case 'true':
+									var mothersYear = prompt("What year is it?","Enter a number");
+									var numberOfKids = prompt("How many children do you have?","Enter a number");
+									if (numberOfKids >= 1) {
+										var day = prompt("What day of the month was your first child born?","Enter a number");
+										var month = prompt("What month of the year was your first child born?","Enter a number");
+										var year = prompt("What year was your first child born?","Enter a number");
+										var momYears = mothersYear - year - 1;
+										var momMonths = month - mothersMonth;
+										momMonths = (momMonths < 0) ? momMonths + 12 : momMonths;
+										var momDays = mothersDay - day + 31;
+										confirm("You've been a mother for " + momYears + " years, " + momMonths + " months and " + momDays + " days !");
+									}
+									else {
+										alert("You need more children to be a mother!");
+									}
+								break;
+							case 'false':
+								alert("This program only works on Mother's Day!");
+								break;
+							default:
+								alert('Only enter true or false!');			
+						}
+						break;
+					case 'false':
+						alert('This program is only for moms!');
+						break;
+					default:
+						alert('Only enter true or false!');
+				}
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="mom.css.css">
+	</head>
+	<body>
+		<button onclick="howLongAMother()">How long have<span> you </span>been a mother?</button>
+	</body>
+</html>
